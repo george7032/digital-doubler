@@ -15,11 +15,14 @@ export default defineConfig({
       dir: "dist",
       publicDir: "dist",
     },
+    // Nitro accepts these prerender options; the wrapper types are narrower.
     prerender: {
       crawlLinks: true,
       routes: ["/"],
       failOnError: false,
     },
+  } as Parameters<typeof defineConfig>[0]["nitro"] & {
+    prerender: Record<string, unknown>;
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
