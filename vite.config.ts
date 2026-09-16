@@ -7,15 +7,22 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Keep the complete production bundle in one conventional folder so
-  // `npm run build` is ready for self-hosting or CI artifact upload.
+  // Produce a fully static site: `npm run build` renders every page to plain
+  // HTML + assets in dist/, ready to upload to any static host (cPanel, etc.).
   nitro: {
+    preset: "static",
     output: {
       dir: "dist",
-      publicDir: "dist/public",
-      serverDir: "dist/server",
+      publicDir: "dist",
     },
-  },
+    // Nitro accepts these prerender options; the wrapper types are narrower.
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+      failOnError: true,
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
