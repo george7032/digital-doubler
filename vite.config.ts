@@ -7,13 +7,18 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Keep the complete production bundle in one conventional folder so
-  // `npm run build` is ready for self-hosting or CI artifact upload.
+  // Produce a fully static site: `npm run build` renders every page to plain
+  // HTML + assets in dist/, ready to upload to any static host (cPanel, etc.).
   nitro: {
+    preset: "static",
     output: {
       dir: "dist",
-      publicDir: "dist/public",
-      serverDir: "dist/server",
+      publicDir: "dist",
+    },
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+      failOnError: false,
     },
   },
   tanstackStart: {
