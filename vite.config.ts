@@ -21,9 +21,8 @@ export default defineConfig({
       routes: ["/"],
       failOnError: false,
     },
-  } as Parameters<typeof defineConfig>[0]["nitro"] & {
-    prerender: Record<string, unknown>;
-  },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } as any,
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
