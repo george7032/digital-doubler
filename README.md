@@ -21,6 +21,16 @@ npm i
 npm run dev
 ```
 
+## Production build
+
+```sh
+npm install
+npm run build
+```
+
+The complete deployable output is written to `dist/`. Static files are in
+`dist/public/`, while the application server bundle is in `dist/server/`.
+
 ## Built with
 
 - TanStack Start
