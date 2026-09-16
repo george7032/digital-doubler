@@ -19,7 +19,7 @@ export default defineConfig({
     prerender: {
       crawlLinks: true,
       routes: ["/"],
-      failOnError: false,
+      failOnError: true,
     },
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } as any,
