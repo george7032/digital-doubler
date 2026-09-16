@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/george7032/my-everything-copy-ddc26c42",
+  "capabilities": [
+    {"capability":"Application code and routes","source":"GitHub repository","outcome":"preserve","status":"inspected","next_action":"Copy and verify all pages"},
+    {"capability":"Static assets and documents","source":"GitHub repository","outcome":"preserve","status":"inspected","next_action":"Copy and verify images and PDFs"},
+    {"capability":"Database schema","source":"No database detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Existing records","source":"No data store detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Authentication and identities","source":"No authentication detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Authorization","source":"No protected capabilities detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Uploaded file bytes","source":"Bundled repository assets","outcome":"preserve","status":"inspected","next_action":"Copy and verify"},
+    {"capability":"External providers and secrets","source":"No environment variables or providers detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Public endpoints and callbacks","source":"No API routes, callbacks, webhooks, or schedules detected","outcome":"not_applicable","status":"verified","next_action":"None"},
+    {"capability":"Cutover","source":"Lovable preview","outcome":"recreate","status":"pending","next_action":"Verify preview"}
+  ]
+}
